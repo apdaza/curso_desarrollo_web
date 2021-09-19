@@ -1,0 +1,37 @@
+body {
+    background-color: #e8f0e8;
+    color: #283b28;
+}
+
+nav {
+    background-color: #283b28;
+    color: #e8f0e8;
+    text-align: right;
+}
+
+nav a {
+    color: #e8f0e8;
+}
+
+aside {
+    float: right;
+    margin: 20px;
+}
+
+section {
+    border: 1px solid #283b28;
+    border-radius: 15px;
+    padding: 1em;
+    margin: 2em;
+    background-color: rgb(255, 255, 255);
+}
+
+#primera {
+    background-color: rgb(200, 255, 200);
+}
+
+#primera article h1 {
+    text-decoration: underline;
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

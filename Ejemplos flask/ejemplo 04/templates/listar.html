@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Acceso a datos</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilos.css') }}"
+    </head>
+    <body>
+        <section>
+            <h1>Listar datos</h1>
+            <nav>
+                <a href="/inicio">Ir a inicio</a>
+                <a href="/listar">Lista de datos</a>
+	            <a href="/agregar">Agregar datos</a>
+            </nav>
+            <table border=1>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Ciudad</th>
+                    <th colspan="2">Acciones</th>
+                </tr>
+                {% for d in data %}
+                <tr>
+                    <td>{{ d['nombre'] }}</td>
+                    <td>{{ d['apellido'] }}</td>
+                    <td>{{ d['ciudad'] }}</td>
+                    <td>
+                        <a href="/eliminar/{{ d['_id'] }}">
+                            <img src="{{ url_for('static', filename='borrar.png') }}" width="40px">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/editar/{{ d['_id'] }}">
+                            <img src="{{ url_for('static', filename='edit.png') }}" width="40px">
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+    </body>
+</html>

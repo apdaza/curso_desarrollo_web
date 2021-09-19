@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Acceso a datos</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilos.css') }}"
+    </head>
+    <body>
+        <section>
+            <h1>Editar a datos</h1>
+            <nav>
+                <a href="/inicio">Ir a inicio</a>
+                <a href="/listar">Lista de datos</a>
+	            <a href="/agregar">Agregar datos</a>
+            </nav>
+            <form action="/editar/{{ data['_id'] }}" method="POST">
+                <p>
+                    <label for="nombre">Nombre:</label> 
+                    <input type="text" name="nombre" value="{{ data['nombre'] }}">
+                </p>
+                <p>
+                    <label for="apellido">Apellido:</label> 
+                    <input type="text" name="apellido" value="{{ data['apellido'] }}">
+                </p>
+                <p>
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" name="ciudad" value="{{ data['ciudad'] }}">
+                </p>
+                <p>
+                    <input type="submit" name="enviar" value="enviar">
+                </p>
+        
+            </form>
+        </section>
+    </body>
+</html>
